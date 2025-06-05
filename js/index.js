@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 // get the Computer Choice
 let getComputerChoice = (num = 3) => {
     let number= Math.floor(Math.random() * num);
@@ -20,9 +23,6 @@ let getPlayerChoice = () => {
     return choice;
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
 // determine the winner of the single round
 let playRound = (playerChoice, computerChoice) => {
     if (playerChoice === computerChoice){
@@ -38,6 +38,20 @@ let playRound = (playerChoice, computerChoice) => {
     }
 }
 
-const playerChoice = getPlayerChoice();
-const computerChoice = getComputerChoice();
-playRound(playerChoice, computerChoice);
+// play the game for 5 rounds and display the final score
+let playGame = () =>{
+    for (let i= 0 ; i < 5 ; i++){
+        const playerChoice = getPlayerChoice();
+        const computerChoice = getComputerChoice();
+        playRound(playerChoice, computerChoice);
+    }
+    console.log("Final Score: Player " + playerScore + " - Computer " + computerScore);
+    if( playerScore === computerScore) {
+        alert("It's a tie!");
+    }else if(playerScore > computerScore) {
+        alert("Congratulations! You win the game!");
+    } else if(playerScore < computerScore) {
+        alert("Sorry! You lose the game!");
+    }
+}
+playGame();
