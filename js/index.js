@@ -5,20 +5,21 @@ let computerScore = 0;
 let getComputerChoice = (num = 3) => {
     let number= Math.floor(Math.random() * num);
     switch (number){
-        case 0: return "Rock";break;
-        case 1: return "Paper";break;
-        case 2: return "Scissors";break;
-        default: return "Invalid Choice";break;
+        case 0: return "Rock";
+        case 1: return "Paper";
+        case 2: return "Scissors";
+        default: return "Invalid Choice";
     }
 };
 
 //get the Player Choice
 let getPlayerChoice = () => {
     let choice = prompt("Enter your choice (Rock, Paper, Scissors):");
-    if (choice === "" || choice === null) {
+    if (choice.trim === "" || choice === null) {
         alert("You must enter a choice!");
         return getPlayerChoice();
     }
+    choice = choice.trim();
     choice = choice.charAt(0).toUpperCase() + choice.slice(1).toLowerCase();
     return choice;
 }
@@ -45,13 +46,15 @@ let playGame = () =>{
         const computerChoice = getComputerChoice();
         playRound(playerChoice, computerChoice);
     }
-    console.log("Final Score: Player " + playerScore + " - Computer " + computerScore);
+    alert("Final Score: Player " + playerScore + " - Computer " + computerScore);
     if( playerScore === computerScore) {
-        alert("It's a tie!");
+        alert("The game ends in a tie!");
     }else if(playerScore > computerScore) {
         alert("Congratulations! You win the game!");
     } else if(playerScore < computerScore) {
         alert("Sorry! You lose the game!");
     }
 }
-playGame();
+document.addEventListener("DOMContentLoaded", () => {
+    playGame();
+});
