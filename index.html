@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>RPS Game</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+        <h3>Rock,Paper,Scissor</h3>
+        <div class="choices">
+            <img src="./images/Rock.png" id="Rock"  height="100px" width="100px" alt="">
+            <img src="./images/Paper.png" id="Paper"  height="100px" width="100px" alt="">
+            <img src="./images/Scissor.png" id="Scissor"  height="100px" width="100px" alt="">
+        </div>
+        <div class="vsTitle">
+            <span class="left">You</span>
+            <span class="right">Computer</span>
+        </div>
+        <div class="score">
+            <span class="playerScore">0</span>
+            <span class="comScore">0</span>
+        </div>
+        <div class="announcement">
+        </div>
+        <div class="restart">
+        </div>
+    </div>
 </body>
 <script src="./js/index.js"></script>
 </html>
